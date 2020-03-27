@@ -1,0 +1,155 @@
+[999D[KPASS src/array/tests/where.test.ts (5.306s)
+  Array.where
+    √ [1, 2, 3].where(_ => true) == [1, 2, 3] (8ms)
+    √ [1, 2, 3].where(_ => false) == []
+    √ [1, 2, 3].where(x => x < 3) == [1, 2]
+    √ [1, 2, 3].where(x => x > 3) == [] (1ms)
+    √ [1, 2, 3].where(x => x != 2) == [1, 3]
+
+PASS src/string/tests/before.test.ts (5.34s)
+  String.before
+    √ ''.before('') == '' (7ms)
+    √ 'Sam'.before('') == 'Sam' (1ms)
+    √ 'Sam'.before('S') == '' (1ms)
+    √ 'Sam'.before('a') == 'S'
+    √ 'Sam'.before(-1) == 'Sam' (1ms)
+    √ 'Sam'.before(0) == ''
+    √ 'Sam'.before(1) == 'S' (1ms)
+    √ 'Sam'.before(2) == 'Sa' (2ms)
+    √ 'Sam'.before(3) == 'Sam' (1ms)
+
+PASS src/string/tests/after.test.ts (5.476s)
+  String.after
+    √ ''.after('') == '' (7ms)
+    √ 'JoeJoe'.after('') == 'JoeJoe' (1ms)
+    √ 'JoeJoe'.after('z') == 'JoeJoe' (1ms)
+    √ 'JoeJoe'.after('J') == 'oeJoe'
+    √ 'JoeJoe'.after('o') == 'eJoe'
+    √ 'JoeJoe'.after(-1) == 'JoeJoe' (1ms)
+    √ 'JoeJoe'.after(0) == 'JoeJoe'
+    √ 'JoeJoe'.after(1) == 'oeJoe' (1ms)
+    √ 'JoeJoe'.after(2) == 'eJoe'
+    √ 'JoeJoe'.after(4) == 'oe' (1ms)
+    √ 'JoeJoe'.after(5) == 'e' (1ms)
+    √ 'JoeJoe'.after(6) == '' (1ms)
+    √ 'JoeJoe'.after(7) == ''
+    √ 'JoeJoe'.after('Jo') == 'eJoe' (1ms)
+
+PASS src/string/tests/matches.test.ts (5.377s)
+  String.matches
+    √ 'abc'.matches(/abc/) == true (8ms)
+    √ 'abcd'.matches(/abc/) == false (1ms)
+    √ ''.matches(/\s*/) == true (1ms)
+    √ '\t'.matches(/\s*/) == true (1ms)
+    √ 'Joe'.matches('.*') == true (1ms)
+    √ 'Joe'.matches('^.*') == true
+    √ 'Joe'.matches('.*$') == true (1ms)
+
+PASS src/string/tests/toPascalCase.test.ts (5.232s)
+  String.toPascalCase
+    √ ''.toPascalCase() == '' (7ms)
+    √ 'JoeJoe'.toPascalCase() == 'JoeJoe' (1ms)
+    √ 'joeJoe'.toPascalCase() == 'JoeJoe'
+
+PASS src/string/tests/afterLast.test.ts (5.314s)
+  String.afterLast
+    √ ''.afterLast('') == '' (6ms)
+    √ 'JoeJoe'.afterLast('') == 'JoeJoe'
+    √ 'JoeJoe'.afterLast('z') == 'JoeJoe' (1ms)
+    √ 'JoeJoe'.afterLast('J') == 'oe'
+    √ 'JoeJoe'.afterLast('o') == 'e' (1ms)
+    √ 'JoeJoe'.afterLast('e') == '' (1ms)
+    √ 'JoeJoe'.afterLast('Jo') == 'e' (1ms)
+
+PASS src/array/tests/removeAt.test.ts (5.345s)
+  Array.removeAt
+    √ [1, 2, 3].removeAt(-1) == [1, 2, 3] (7ms)
+    √ [1, 2, 3].removeAt(0) == [2, 3] (1ms)
+    √ [1, 2, 3].removeAt(1) == [1, 3] (1ms)
+    √ [1, 2, 3].removeAt(2) == [1, 2] (1ms)
+    √ [1, 2, 3].removeAt(3) == [1, 2, 3] (1ms)
+    √ [1, 2, 3].removeAt(0, 0) == [1, 2, 3]
+    √ [1, 2, 3].removeAt(0, -1) == [1, 2, 3] (1ms)
+    √ [1, 2, 3].removeAt(0, 2) == [3] (1ms)
+
+PASS src/array/tests/selectMany.test.ts (5.449s)
+  Array.selectMany
+    √ [].selectMany(x => x) == [] (6ms)
+    √ [['a', 'b', 'c'], ['x', 'y', 'z'], ['u', 'v', 'w']].selectMany(x => x) == ['a', 'b', 'c', 'x', 'y', 'z', 'u', 'v', 'w'] (2ms)
+    √ [{
+    name: 'Joe',
+    things: [1, 2, 3]
+  }, {
+    name: 'Bob',
+    things: [4, 5, 6]
+  }].selectMany(x => x.things) == [1, 2, 3, 4, 5, 6] (1ms)
+
+PASS src/string/tests/beforeLast.test.ts (5.513s)
+  String.beforeLast
+    √ 'JoeJoe'.beforeLast('') == 'JoeJoe' (5ms)
+    √ 'JoeJoe'.beforeLast('z') == 'JoeJoe'
+    √ 'JoeJoe'.beforeLast('J') == 'Joe' (1ms)
+    √ 'JoeJoe'.beforeLast('e') == 'JoeJo'
+    √ 'JoeJoe'.beforeLast(-1) == 'JoeJoe' (1ms)
+    √ 'JoeJoe'.beforeLast(0) == 'JoeJoe'
+    √ 'JoeJoe'.beforeLast(1) == 'JoeJo'
+    √ 'JoeJoe'.beforeLast(2) == 'JoeJ' (1ms)
+    √ 'JoeJoe'.beforeLast(5) == 'J'
+    √ 'JoeJoe'.beforeLast(6) == '' (1ms)
+    √ 'JoeJoe'.beforeLast(7) == '' (1ms)
+
+PASS src/array/tests/remove.test.ts (5.296s)
+  Array.remove
+    √ [1, 2, 3].remove(5) == [1, 2, 3] (5ms)
+    √ [1, 2, 3].remove(2) == [1, 3] (1ms)
+    √ [1, 2, 3].remove(x => x >= 2) == [1, 3]
+
+PASS src/array/tests/select.test.ts (5.423s)
+  Array.select
+    √ [1, 2, 3].select(x => x.toString()) == ['1', '2', '3'] (5ms)
+    √ [].select(x => x > 10) == [] (1ms)
+    √ [1, 2, 3].select(x => x + 1) == [2, 3, 4] (1ms)
+
+PASS src/array/tests/any.test.ts
+  Array.any
+    √ [1, 2, 3].any() == true
+    √ [].any() == false (1ms)
+    √ [1, 2, 3].any(x => true) == true
+    √ [1, 2, 3].any(x => false) == false
+    √ [1, 2, 3].any(x => x < 3) == true (1ms)
+    √ [1, 2, 3].any(x => x > 3) == false
+    √ [1, 2, 3].any(x => x != 2) == true (1ms)
+
+PASS src/array/tests/all.test.ts
+  Array.all
+    √ [1, 2, 3].all(_ => true) == true (5ms)
+    √ [1, 2, 3].all(_ => false) == false
+    √ [1, 2, 3].all(x => x < 3) == false (1ms)
+    √ [1, 2, 3].all(x => x <= 3) == true
+    √ [1, 2, 3].all(x => x != 3) == false (1ms)
+
+PASS src/string/tests/toCamelCase.test.ts
+  String.toCamelCase
+    √ ''.toCamelCase() == '' (1ms)
+    √ 'JoeJoe'.toCamelCase() == 'joeJoe'
+    √ 'joeJoe'.toCamelCase() == 'joeJoe' (1ms)
+
+PASS src/runTests.test.ts
+  √ repr (5ms)
+
+PASS src/array/tests/removeAll.test.ts
+  Array.removeAll
+    √ [1, 2, 3].removeAll(_ => false) == [1, 2, 3] (1ms)
+    √ [1, 2, 3].removeAll(x => x > 3) == [1, 2, 3]
+    √ [1, 2, 3].removeAll(x => x < 3) == [3] (1ms)
+
+PASS src/array/tests/add.test.ts
+  Array.add
+    √ [1, 2, 3].add(5) == [1, 2, 3, 5] (1ms)
+    √ [].add(1) == [1]
+
+[999D[KTest Suites: 17 passed, 17 total
+Tests:       94 passed, 94 total
+Snapshots:   0 total
+Time:        9.993s, estimated 10s
+Ran all test suites.
