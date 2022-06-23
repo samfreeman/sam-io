@@ -18,7 +18,7 @@
     "build": "tsc"
   },
   "dependencies": {
-    "jsdom": "^15.2.1"
+    "jsdom": "^16.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
